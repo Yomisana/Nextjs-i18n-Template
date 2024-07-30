@@ -1,12 +1,32 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "@/app/page.module.css";
+
+import { useTranslations } from "next-intl";
+
+import LocaleSwitcher from "@/components/LocaleSwitcher";
 
 export default function Home() {
+  const t = useTranslations("DefaultPage");
+  const Nav_list = {
+    Docs: {
+      url: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app",
+    },
+    Learn: {
+      url: "https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app",
+    },
+    Templates: {
+      url: "https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app",
+    },
+    Deploy: {
+      url: "https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app",
+    },
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
+          {t("Header description")}&nbsp;
           <code className={styles.code}>src/app/page.js</code>
         </p>
         <div>
@@ -15,7 +35,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            {t("By")}{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -25,6 +45,7 @@ export default function Home() {
               priority
             />
           </a>
+          <LocaleSwitcher />
         </div>
       </div>
 
@@ -40,55 +61,20 @@ export default function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        {Object.entries(Nav_list).map(([key, value]) => (
+          <a
+            key={key}
+            href={value.url}
+            className={styles.card}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h2>
+              {t(`list title.${key}`)} <span>-&gt;</span>
+            </h2>
+            <p>{t(`list content.${key}`)}</p>
+          </a>
+        ))}
       </div>
     </main>
   );
