@@ -9,6 +9,14 @@ const nextConfig = {
   basePath: "/yomisana-nextjs-template",
   output: "export",
   reactStrictMode: true,
+
+  experimental: {
+    turbo: {
+      resolveAlias: {
+        "next-intl/config": "./src/i18n.js",
+      },
+    },
+  },
 };
 
 export default withNextIntl(nextConfig);
