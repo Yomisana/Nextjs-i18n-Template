@@ -3,10 +3,10 @@ import styles from "@/app/page.module.css";
 
 import { useTranslations } from "next-intl";
 
-import LocaleSwitcher from "@/components/LocaleSwitcher";
+import LocaleSwitcher from "@/components/client/LocaleSwitcher/LocaleSwitcher";
 
 export default function Home() {
-  const t = useTranslations("DefaultPage");
+  const t = useTranslations("Page.DefaultPage");
   const Nav_list = {
     Docs: {
       url: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app",

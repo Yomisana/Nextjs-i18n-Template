@@ -1,4 +1,10 @@
 {
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "search.exclude": {
+        "**/node_modules": true
+    },
     "i18n-ally.localesPaths": [
         "locale"
     ]

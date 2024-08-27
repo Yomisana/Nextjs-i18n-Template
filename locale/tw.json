@@ -1,27 +1,38 @@
 {
-  "Language list": {
+  "LocaleSwitcher": {
     "label": "語言",
     "en": "英文",
     "tw": "中文"
   },
-  "DefaultPage": {
-    "Metadata": {
+  "Metadata": {
+    "DefaultPage": {
       "title": "創建 Next 應用程式",
       "description": "由創建 Next 應用程式生成"
     },
-    "Header description": "開始編輯",
-    "By": "由",
-    "list title": {
-      "Docs": "文檔",
-      "Learn": "學習",
-      "Templates": "模板",
-      "Deploy": "部署"
+    "ElseCoolPage": {
+      "title": "這是一個很酷的頁面",
+      "description": "這是一個很酷的頁面的描述"
+    }
+  },
+  "Page": {
+    "DefaultPage": {
+      "Header description": "開始編輯",
+      "By": "由",
+      "list title": {
+        "Docs": "文檔",
+        "Learn": "學習",
+        "Templates": "模板",
+        "Deploy": "部署"
+      },
+      "list content": {
+        "Docs": "查找有關 Next.js 功能和 API 的深入信息。",
+        "Learn": "通過測驗互動課程學習 Next.js！",
+        "Templates": "探索 Next.js 的入門模板。",
+        "Deploy": "通過 Vercel 即時部署您的 Next.js 網站並獲取可分享的 URL。"
+      }
     },
-    "list content": {
-      "Docs": "查找有關 Next.js 功能和 API 的深入信息。",
-      "Learn": "通過測驗互動課程學習 Next.js！",
-      "Templates": "探索 Next.js 的入門模板。",
-      "Deploy": "通過 Vercel 即時部署您的 Next.js 網站並獲取可分享的 URL。"
+    "ElseCoolPage": {
+      "Title": "這是一個很酷的頁面"
     }
   }
 }

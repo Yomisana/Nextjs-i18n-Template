@@ -35,9 +35,30 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Development Guide
+### using async or no-async component
+> async next-intl component using:
+```
+import { getTranslations } from "next-intl/server"; 
+
+export default async function DefaultPage(){
+  const t = await getTranslations("page.DefaultPage");
+}
+```
+> no-async next-intl component using:
+```
+import { useTranslations } from "next-intl";
+
+export default function DefaultPage(){
+  const t = await getTranslations("page.DefaultPage");
+}
+```
+
 
 ## Features
 - [X] Support i18n without sub path
   - [X] Auto match locale by browser language
   - [X] Store locale in cookie
   - [X] Automatically get locale folder language
+## Fix bugs
+- Fix next-intl failed to pipe response issue

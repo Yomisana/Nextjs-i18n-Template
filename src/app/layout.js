@@ -9,7 +9,7 @@ import { getLocale, getMessages, getTranslations } from "next-intl/server";
 export async function generateMetadata({ params: { locale } }) {
   const t = await getTranslations({
     locale,
-    namespace: "DefaultPage.Metadata",
+    namespace: "Metadata.DefaultPage",
   });
   const WEBSITE_NAME = process.env.WEBSITE_NAME;
   return {
